@@ -28,9 +28,7 @@ public class Config {
     private static final String CHAIN_ID = "com.atraurablockchain.chainid";
     private static final String CHAIN_CODE_NAME = "com.atraurablockchain.chaincodename";
     private static final String CHAIN_CODE_PATH = "com.atraurablockchain.chaincodepath";
-    private static final String SOLO_ORDERER_ADDRESS = "com.atraurablockchain.ordereraddress";
     private static final String PEER_ADDRESS = "com.atraurablockchain.peeraddress";
-    private static final String EVENT_ADDRESS = "com.atraurablockchain.eventhubaddress";
     private static final String CA_ADDRESS = "com.atraurablockchain.caaddress";
     private static final String USER_NAME_1 = "com.atraurablockchain.username_1";
     private static final String USER_PSWD_1 = "com.atraurablockchain.userpswd_1";
@@ -163,17 +161,6 @@ public class Config {
 
     }
 
-
-    /**
-     * Returns orderer address
-     *
-     * @return
-     */
-    public String getSoloOrdererAddress() {
-        return getProperty(SOLO_ORDERER_ADDRESS);
-
-    }
-
     /**
      * Returns peer address
      *
@@ -182,15 +169,6 @@ public class Config {
     public String getPeerAddress() {
         return getProperty(PEER_ADDRESS);
 
-    }
-
-    /**
-     * Returns eventhub address
-     *
-     * @return
-     */
-    public String getEventAddress() {
-        return getProperty(EVENT_ADDRESS);
     }
 
     /**

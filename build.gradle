@@ -2,6 +2,8 @@ group 'com.atraura'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
+apply plugin: 'idea'
+
 
 sourceCompatibility = 1.5
 

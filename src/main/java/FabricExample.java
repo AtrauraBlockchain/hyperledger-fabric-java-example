@@ -13,9 +13,7 @@ import rx.functions.Func1;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.concurrent.TimeUnit;
-/**
- * Created by Elli on 3/13/17.
- */
+
 public class FabricExample {
     private static final HttpLoggingInterceptor HTTP_LOGGING_INTERCEPTOR = new HttpLoggingInterceptor();
     private final static Config config = Config.getConfig();
@@ -29,19 +27,6 @@ public class FabricExample {
     private static final Logger LOG = LoggerFactory.getLogger(FabricExample.class);
 
     public static void main(String[] args) throws Exception {
-        FABRIC.deleteRegistrar(config.getUserName_1()).subscribe(new Action1<OK>() {
-            @Override
-            public void call(OK ok) {
-                System.out.printf("Delete registrar ok message:%s\n", ok);
-            }
-        });
-
-        FABRIC.deleteRegistrar(config.getUserName_2()).subscribe(new Action1<OK>() {
-            @Override
-            public void call(OK ok) {
-                System.out.printf("Delete registrar ok message:%s\n", ok);
-            }
-        });
         FABRIC.createRegistrar(
                 Secret.builder()
                         .enrollId(config.getUserName_1())
@@ -95,7 +80,7 @@ public class FabricExample {
                                 ChaincodeSpec.builder()
                                         .chaincodeID(
                                                 ChaincodeID.builder()
-                                                        .name("mycc")
+                                                        .path("https://raw.githubusercontent.com/hyperledger/fabric/master/examples/chaincode/chaintool/example02/src/chaincode/chaincode_example02.go")
                                                         .build())
                                         .ctorMsg(
                                                 ChaincodeInput.builder()
@@ -272,20 +257,6 @@ public class FabricExample {
                         System.out.printf("Error message:%s\n", error);
                     }
                 });
-
-        FABRIC.deleteRegistrar(config.getUserName_1()).subscribe(new Action1<OK>() {
-            @Override
-            public void call(OK ok) {
-                System.out.printf("Delete registrar ok message:%s\n", ok);
-            }
-        });
-
-        FABRIC.deleteRegistrar(config.getUserName_2()).subscribe(new Action1<OK>() {
-            @Override
-            public void call(OK ok) {
-                System.out.printf("Delete registrar ok message:%s\n", ok);
-            }
-        });
 
     }
 }
