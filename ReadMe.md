@@ -9,7 +9,9 @@ Select the blockchain option and follow the steps until you can launch your dash
 
 Clone the project.
 
-Next, you will need to add a file into the Resources folder and call it `config.properties`. Then paste the following snippet into the file and change the ######## into your personal bluemix account secrets.
+Next, you will need to add a file into the Resources folder and call it `config.properties`. Then paste the following snippet into the file and change the ######## into your personal Bluemix account secrets.
+
+You will find the Bluemix sercrets by going into the Blockchain Dashboard and clicking the API choice on from the options available. Once on the `APIs` page, expand the `Network's Enroll IDs` and copy and paste from this list.
 
 ```
 
@@ -20,9 +22,9 @@ com.atraurablockchain.ordereraddress = grpc://localhost:7050
 com.atraurablockchain.peeraddress = ########
 com.atraurablockchain.eventhubaddress = grpc://localhost:7053
 com.atraurablockchain.caaddress = http://localhost:7054
-com.atraurablockchain.username_1 = user_type2_2
+com.atraurablockchain.username_1 = user_type1_0
 com.atraurablockchain.userpswd_1 = #########
-com.atraurablockchain.username_2 = user_type1_2
+com.atraurablockchain.username_2 = user_type2_0
 com.atraurablockchain.userpswd_2 = #########
 com.atraurablockchain.keystore_properties = keystore.properties
 com.atraurablockchain.invoke_waittime = 1000
